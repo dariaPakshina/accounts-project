@@ -7,17 +7,20 @@ import { AccountService } from '../accounts.service';
   standalone: true,
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
-  providers: [LoggingService], // instantiating service
 })
 export class NewAccountComponent {
   // instantiating service
   constructor(
     private loggingService: LoggingService,
     private accountsService: AccountService
-  ) {}
+  ) {
+    this.accountsService.statusUpdated.subscribe((status: string) =>
+      alert('New status: ' + status)
+    );
+  }
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountsService.addAccount(accountName, accountStatus);
-    this.loggingService.logStatusChange(accountStatus); //LoggingService class's instance
+    // this.loggingService.logStatusChange(accountStatus); //LoggingService class's instance
   }
 }

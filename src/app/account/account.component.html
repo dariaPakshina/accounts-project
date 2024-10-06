@@ -1,15 +1,15 @@
 <div class="row">
-  <div class="col-xs-12 col-md-8 col-md-offset-2">
+  <div class="col-12 col-md-8 offset-md-1">
     <h5>{{ account?.name }}</h5>
     <hr />
     <p>This account is {{ account?.status }}</p>
-    <button class="btn btn-default" (click)="onSetTo('active')">
+    <button class="btn btn-secondary me-2 mb-2" (click)="onSetTo('active')">
       Set to 'active'
     </button>
-    <button class="btn btn-default" (click)="onSetTo('inactive')">
+    <button class="btn btn-secondary me-2 mb-2" (click)="onSetTo('inactive')">
       Set to 'inactive'
     </button>
-    <button class="btn btn-default" (click)="onSetTo('unknown')">
+    <button class="btn btn-secondary mb-2" (click)="onSetTo('unknown')">
       Set to 'unknown'
     </button>
   </div>
